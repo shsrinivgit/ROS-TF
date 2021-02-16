@@ -1,0 +1,6 @@
+<launch>
+    <arg name="follower_model_name" default="turtle2" />
+    <arg name="model_to_be_followed_name" default="fixed_carrot" />
+
+    <node name="tf_listener_turtle" pkg="unit3_pkg" type="exercise_2_3_listener.py" args="$(arg follower_model_name) $(arg model_to_be_followed_name)" output="screen"/>
+</launch>
