@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<robot name="pi_robot">
+   <link name="my_box">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.2" />
+            <inertia ixx="0.00112833333333" ixy="0.0" ixz="0.0" iyy="0.00170833333333" iyz="0.0" izz="0.00283333333333"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0.065" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.32 0.26 0.010"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0.065" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.32 0.26 0.035"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="my_box">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/pi_robot</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+
+    <link name="wheel1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <mass value="0.2" />
+            <inertia ixx="0.000112916666667" ixy="0.0" ixz="0.0" iyy="0.000112916666667" iyz="0.0" izz="6.25e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <geometry>
+                <cylinder radius="0.065" length="0.009"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+			<geometry>
+				<cylinder radius="0.065" length="0.009"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="wheel1">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/White</material>
+  </gazebo>
+
+    <link name="wheel2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <mass value="0.2" />
+            <inertia ixx="0.000112916666667" ixy="0.0" ixz="0.0" iyy="0.000112916666667" iyz="0.0" izz="6.25e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <geometry>
+                <cylinder radius="0.065" length="0.009"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+			<geometry>
+				<cylinder radius="0.065" length="0.009"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="wheel2">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Orange</material>
+  </gazebo>
+
+    <link name="wheel3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <mass value="0.2" />
+            <inertia ixx="0.000112916666667" ixy="0.0" ixz="0.0" iyy="0.000112916666667" iyz="0.0" izz="6.25e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <geometry>
+                <cylinder radius="0.065" length="0.009"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+			<geometry>
+				<cylinder radius="0.065" length="0.009"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="wheel3">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Red</material>
+  </gazebo>
+
+    <link name="wheel4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <mass value="0.2" />
+            <inertia ixx="0.000112916666667" ixy="0.0" ixz="0.0" iyy="0.000112916666667" iyz="0.0" izz="6.25e-05"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+            <geometry>
+                <cylinder radius="0.065" length="0.009"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 1.5 1.5"/>
+			<geometry>
+				<cylinder radius="0.065" length="0.009"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="wheel4">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Green</material>
+  </gazebo>
+
+    <link name="arm">
+        <collision>
+            <origin xyz="0 0 0.095" rpy="0 -0 0"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.15"/>
+            </geometry>
+        </collision>
+		<visual>
+		    <origin xyz="0 0 0.095" rpy="0 -0 0"/>
+			<geometry>
+				<cylinder radius="0.005" length="0.15"/>
+			</geometry>
+		</visual>	
+    </link>
+    <gazebo reference="arm">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <link name="camera_link">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.015"/>
+            </geometry>
+        </collision>
+
+        <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <sphere radius="0.015"/>
+        </geometry>
+        </visual>
+    </link>
+    
+    <gazebo reference="camera_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+  <joint name="wheel1_joint" type="continuous">
+    	<parent link="my_box"/>
+    	<child link="wheel1"/>
+    	<origin xyz="-0.09 -0.135 0" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="0" upper="0" effort="10" velocity="1"/>
+  	</joint>
+
+    <joint name="wheel2_joint" type="continuous">
+    	<parent link="my_box"/>
+    	<child link="wheel2"/>
+    	<origin xyz="0.09 0.135 0" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="0" upper="0" effort="10" velocity="1"/>
+  	</joint>
+    
+    <joint name="whee3_joint" type="continuous">
+    	<parent link="my_box"/>
+    	<child link="wheel3"/>
+    	<origin xyz="0.09 -0.135 0" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="0" upper="0" effort="10" velocity="1"/>
+  	</joint>
+    
+    <joint name="whee4_joint" type="continuous">
+    	<parent link="my_box"/>
+    	<child link="wheel4"/>
+    	<origin xyz="-0.09 0.135 0" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="0" upper="0" effort="10" velocity="1"/>
+  	</joint>
+
+    <joint name="arm_joint" type="fixed">
+    	<parent link="my_box"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+    	<child link="arm"/>
+  	</joint>
+
+    <joint name="camera_arm_joint" type="fixed">
+    	<parent link="arm"/>
+    	<child link="camera_link"/>
+        <origin xyz="0 0 0.175" rpy="0 0 0"/>
+  	</joint>
+
+    <transmission name="tran1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel1_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor1">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="whee2_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor2">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+</robot>
